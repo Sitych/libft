@@ -22,7 +22,8 @@ int main()
 	char	str[7] = "123456";
 //	char    str2[4] = "345";
 	char	str3[7] = "123456";
-	printf("%d ", strcmp(strnstr(str, "56", 5), ft_strnstr(str3, "56", 5)));
+	printf("%d %d ", ft_strncmp(str, "123656", 3) , strncmp(str3, "123656", 3));
+	//printf("%d ", strcmp(strcmp(str, "56"), ft_strcmp(str2, "56")));
 }
 
 //void	ft_check_strdup()
