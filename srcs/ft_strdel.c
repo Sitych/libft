@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qjosmyn <qjosmyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/13 09:47:01 by qjosmyn           #+#    #+#             */
-/*   Updated: 2019/09/13 09:47:03 by qjosmyn          ###   ########.fr       */
+/*   Created: 2019/09/13 11:38:29 by qjosmyn           #+#    #+#             */
+/*   Updated: 2019/09/13 11:40:55 by qjosmyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalpha(int c)
+#include <header.h>
+#include <stdlib.h>
+
+void	ft_strdel(char **as)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (c);
-	else
-		return (0);
+	free(*as);
+	*as = NULL;
 }

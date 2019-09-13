@@ -6,12 +6,12 @@
 /*   By: qjosmyn <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 21:15:07 by qjosmyn           #+#    #+#             */
-/*   Updated: 2019/09/10 00:29:54 by qjosmyn          ###   ########.fr       */
+/*   Updated: 2019/09/11 09:23:34 by qjosmyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <stdio.h>
+
 int		ft_memcmp(const void *str1, const void *str2, size_t n)
 {
 	unsigned char *s1;

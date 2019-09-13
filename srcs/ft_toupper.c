@@ -1,9 +1,21 @@
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: qjosmyn <qjosmyn@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/13 09:50:07 by qjosmyn           #+#    #+#             */
+/*   Updated: 2019/09/13 10:04:58 by qjosmyn          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include <header.h>
+
+int		ft_toupper(int c)
 {
-	if (sizeof(c) == sizeof(unsigned char) && c >= 'a' && c <= 'z')
-		return (c - ('A' - 'a'));
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
 	else
 		return (c);
 }

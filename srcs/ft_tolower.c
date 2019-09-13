@@ -1,9 +1,21 @@
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: qjosmyn <qjosmyn@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/13 09:50:07 by qjosmyn           #+#    #+#             */
+/*   Updated: 2019/09/13 10:04:45 by qjosmyn          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include <header.h>
+
+int		ft_tolower(int c)
 {
-	if (sizeof(c) == sizeof(unsigned char) && c >= 'A' && c <= 'Z')
-		return (c + ('A' - 'a'));
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
 	else
 		return (c);
 }

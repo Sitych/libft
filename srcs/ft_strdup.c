@@ -6,14 +6,12 @@
 /*   By: qjosmyn <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 22:47:37 by qjosmyn           #+#    #+#             */
-/*   Updated: 2019/09/06 22:03:07 by qjosmyn          ###   ########.fr       */
+/*   Updated: 2019/09/11 09:40:15 by qjosmyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <header.h>
 #include <stdlib.h>
-
-static size_t	ft_strlen(const char *str);
 
 char			*ft_strdup(const char *src)
 {
@@ -29,14 +27,4 @@ char			*ft_strdup(const char *src)
 		*(dest++) = *(src++);
 	*(dest) = '\0';
 	return (dest - len);
-}
-
-static size_t	ft_strlen(const char *str)
-{
-	size_t i;
-
-	i = 0;
-	while (*(str++))
-		i++;
-	return (i);
 }

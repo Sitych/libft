@@ -1,14 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: qjosmyn <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/11 09:35:56 by qjosmyn           #+#    #+#             */
+/*   Updated: 2019/09/11 10:47:33 by qjosmyn          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <header.h>
 
-int     ft_strcmp(const char *str1, const char *str2)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-    int     result;
+	int	rslt;
+	int len;
 
-    result = ft_memcmp(str1, str2, ft_strlen(str1));
-    if (result == 0)
-        return (0);
-    else if (result > 0)
-        return (1);
-    else
-        return (-1);
+	len = ft_strlen(s1) + 1;
+	if (len == 1 && ft_strlen(s2) != 0)
+		len--;
+	rslt = (int)ft_memcmp(s1, s2, len);
+	return (rslt);
 }

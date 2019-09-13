@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: qjosmyn <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/11 09:34:55 by qjosmyn           #+#    #+#             */
+/*   Updated: 2019/09/11 09:35:06 by qjosmyn          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <header.h>
 
-char    *ft_strchr(const char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
-    return ((char*)ft_memchr(str, c, ft_strlen(str)));
+	return ((char*)ft_memchr(str, c, ft_strlen(str) + 1));
 }

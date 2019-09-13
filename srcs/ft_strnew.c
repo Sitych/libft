@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qjosmyn <qjosmyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/13 09:47:01 by qjosmyn           #+#    #+#             */
-/*   Updated: 2019/09/13 09:47:03 by qjosmyn          ###   ########.fr       */
+/*   Created: 2019/09/13 10:51:48 by qjosmyn           #+#    #+#             */
+/*   Updated: 2019/09/13 11:37:25 by qjosmyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalpha(int c)
+#include <header.h>
+#include <stdlib.h>
+
+char	*ft_strnew(size_t size)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (c);
-	else
-		return (0);
+	char	*str;
+
+	size++;
+	str = NULL;
+	str = (char*)malloc(size);
+	if (str == NULL)
+		return (str);
+	ft_bzero(str, size);
+	return (str);
 }

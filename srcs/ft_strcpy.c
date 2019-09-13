@@ -6,7 +6,7 @@
 /*   By: qjosmyn <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 22:21:01 by qjosmyn           #+#    #+#             */
-/*   Updated: 2019/09/09 21:18:05 by qjosmyn          ###   ########.fr       */
+/*   Updated: 2019/09/11 09:33:34 by qjosmyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 
 char	*ft_strcpy(char *dest, const char *src)
 {
-    return ((char*)ft_memcpy(dest, src, ft_strlen(src) + 1));
+	return ((char*)ft_memcpy(dest, src, ft_strlen(src) + 1));
 }

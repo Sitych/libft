@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qjosmyn <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: qjosmyn <qjosmyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 22:09:32 by qjosmyn           #+#    #+#             */
-/*   Updated: 2019/09/06 21:51:04 by qjosmyn          ###   ########.fr       */
+/*   Updated: 2019/09/13 13:35:23 by qjosmyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,20 @@ char    *ft_strrchr(const char *src, int c);
 char    *ft_strstr(const char *haystack, const char *needle);
 char    *ft_strnstr(const char *haystack, const char *needle, size_t n);
 int     ft_strcmp(const char *s1, const char *s2);
-int     ft_strncmp(const char *str1, const char *str2, size_t n);
+int     ft_strncmp(const char *s1, const char *s2, size_t n);
+int     ft_atoi(const char *src);
+int     ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isprint(int c);
+int		ft_toupper(int c);
+int		ft_toupper(int c);
+void	*ft_memalloc(size_t size);
+void	ft_memdel(void **ap);
+char	*ft_strnew(size_t size);
+void	ft_strdel(char **as);
+void	ft_strclr(char *s);
+void	ft_striter(char *s, void (*f)(char *));
 
 #endif

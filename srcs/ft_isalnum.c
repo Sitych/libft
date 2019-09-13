@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: qjosmyn <qjosmyn@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/13 09:45:04 by qjosmyn           #+#    #+#             */
+/*   Updated: 2019/09/13 09:49:03 by qjosmyn          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <header.h>
 
-int	isalnum(int c)
+int	ft_isalnum(int c)
 {
-	if ( ft_isdigit(c) || ft_isalpha(c))
+	if (ft_isdigit(c) || ft_isalpha(c))
 		return (c);
 	else
 		return (0);
