@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qjosmyn <qjosmyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/11 09:31:11 by qjosmyn           #+#    #+#             */
-/*   Updated: 2019/09/15 23:26:24 by qjosmyn          ###   ########.fr       */
+/*   Created: 2019/09/15 11:51:54 by qjosmyn           #+#    #+#             */
+/*   Updated: 2019/09/15 14:14:38 by qjosmyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <header.h>
-#include <stdio.h>
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	char	*str;
-	size_t	len;
 	size_t	i;
+	char	*str_new;
 
-	len = ft_strlen(haystack);
-	str = (char *)haystack;
-	if (*needle == 0)
-		return (str);
-	else if (n == 0 || len < ft_strlen(needle))
+	if (s == NULL)
 		return (NULL);
-	while (n != 0 && *str)
+	str_new = NULL;
+	i = 0;
+	str_new = (char*)malloc(ft_strlen(s) + 1);
+	if (str_new == NULL)
+		return (NULL);
+	while (s[i])
 	{
-		if (!ft_strncmp(str, needle, len)
-		|| ft_strncmp(str, needle, len) == needle[0])
-			return (str);
-		str++;
-		n--;
+		str_new[i] = (*f)(s[i]);
+		i++;
 	}
-	return (NULL);
+	str_new[i] = 0;
+	return (str_new);
 }

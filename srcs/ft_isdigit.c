@@ -6,14 +6,14 @@
 /*   By: qjosmyn <qjosmyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/13 09:47:48 by qjosmyn           #+#    #+#             */
-/*   Updated: 2019/09/13 09:47:50 by qjosmyn          ###   ########.fr       */
+/*   Updated: 2019/09/15 15:58:13 by qjosmyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
-		return (c);
+		return (1);
 	else
 		return (0);
 }

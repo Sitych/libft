@@ -6,7 +6,7 @@
 /*   By: qjosmyn <qjosmyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/13 09:45:04 by qjosmyn           #+#    #+#             */
-/*   Updated: 2019/09/13 09:49:03 by qjosmyn          ###   ########.fr       */
+/*   Updated: 2019/09/15 15:58:00 by qjosmyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_isalnum(int c)
 {
 	if (ft_isdigit(c) || ft_isalpha(c))
-		return (c);
+		return (1);
 	else
 		return (0);
 }

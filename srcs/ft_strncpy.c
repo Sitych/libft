@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qjosmyn <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: qjosmyn <qjosmyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 22:21:01 by qjosmyn           #+#    #+#             */
-/*   Updated: 2019/09/11 09:22:24 by qjosmyn          ###   ########.fr       */
+/*   Updated: 2019/09/15 21:38:34 by qjosmyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,12 @@ char	*ft_strncpy(char *dst, const char *src, size_t n)
 		return (dst);
 	str = (char*)dst;
 	src1 = (char*)src;
-	while (n-- != 0 && *src)
+	while (n != 0 && *src1)
+	{
 		*str++ = *src1++;
+		n--;
+	}
+	while (n-- != 0)
+		*str++ = 0;
 	return (dst);
 }

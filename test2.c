@@ -6,30 +6,44 @@
 /*   By: qjosmyn <qjosmyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/13 10:19:26 by qjosmyn           #+#    #+#             */
-/*   Updated: 2019/09/13 13:33:40 by qjosmyn          ###   ########.fr       */
+/*   Updated: 2019/09/15 23:21:22 by qjosmyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// gcc -Wall -Wextra -Werror test.c -L ./ -lft -Iincludes
+// gcc -Wall -Wextra -Werror test2.c -L ./ -lft -Iincludes
 #include <unistd.h>
 #include <stdio.h>
 #include <header.h>
 #include <check.h>
+#include <stdlib.h>
+#include <ctype.h>
 
-void	f(char *s)
+char	f(char s)
 {
-	*s = *s + 1;
+	return (s + 1);
 }
 
-int		main()
+int main()
 {
-	char str[] = "1111";
-    char b[] = "override this !";
-    char b2[0xF0];
-    size_t size = strlen(b);
-	for (size_t i = 0; i < size; i++)
-        ft_striteri((char)i, b2 + i);
+	char	*s1 = "see FF your FF return FF now FF";
+	char	*s2 = "FF";
+	// printf("strncmp = %d %c\n", strncmp(s1 + 4, s2 , 5), *(s1 + 4));
+	// printf("ft_strncmp =  %d\n", ft_strncmp(s1 + 4, s2 , 5));
+	printf("%s\n", strnstr(s1, s2, strlen(s1)));
+	char	*s3 = "FF your FF return FF now FF";
+	char	*s4 = "FF";
+	printf("%s", ft_strnstr(s3, s4, strlen(s1)));
+	// char	s1[100] = "abc";
+	// char	s2[100] = "a";
+	// printf("%zd", strlcat(s1, s2, 7));
+	// printf("%s\n", s1);
+	// char	s3[100] = "abc";
+	// char	s4[100] = "a";
+	// printf("%zd", ft_strlcat(s3, s4, 7));
+	// printf("%s", s3);	
+	return 0;
 }
+
 void    ft_check_strclr()
 {
     char str[] = "1111";

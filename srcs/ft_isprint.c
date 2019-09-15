@@ -6,14 +6,14 @@
 /*   By: qjosmyn <qjosmyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/13 09:48:30 by qjosmyn           #+#    #+#             */
-/*   Updated: 2019/09/13 09:54:43 by qjosmyn          ###   ########.fr       */
+/*   Updated: 2019/09/15 15:58:02 by qjosmyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
-		return (c);
+		return (1);
 	else
 		return (0);
 }

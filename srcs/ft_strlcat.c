@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qjosmyn <qjosmyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/11 09:31:11 by qjosmyn           #+#    #+#             */
-/*   Updated: 2019/09/15 23:26:24 by qjosmyn          ###   ########.fr       */
+/*   Created: 2019/09/15 16:51:19 by qjosmyn           #+#    #+#             */
+/*   Updated: 2019/09/15 20:53:20 by qjosmyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <header.h>
-#include <stdio.h>
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
+size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {
-	char	*str;
+	char	*buf;
 	size_t	len;
-	size_t	i;
+	size_t	len1;
 
-	len = ft_strlen(haystack);
-	str = (char *)haystack;
-	if (*needle == 0)
-		return (str);
-	else if (n == 0 || len < ft_strlen(needle))
-		return (NULL);
-	while (n != 0 && *str)
+	buf = dest;
+	len = ft_strlen(buf);
+	len1 = ft_strlen(src);
+	buf = buf + len;
+	if (len >= n)
+		return (n + ft_strlen(src));
+	n = n - len - 1;
+	while (*src && n != 0)
 	{
-		if (!ft_strncmp(str, needle, len)
-		|| ft_strncmp(str, needle, len) == needle[0])
-			return (str);
-		str++;
+		ft_memset(buf, *src, 1);
+		buf++;
+		src++;
 		n--;
 	}
-	return (NULL);
+	*buf = 0;
+	return (len + len1);
 }
