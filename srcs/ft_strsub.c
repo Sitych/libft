@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qjosmyn <qjosmyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 09:26:04 by qjosmyn           #+#    #+#             */
-/*   Updated: 2019/09/16 09:47:25 by qjosmyn          ###   ########.fr       */
+/*   Created: 2019/09/16 09:54:34 by qjosmyn           #+#    #+#             */
+/*   Updated: 2019/09/16 10:16:21 by qjosmyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <header.h>
 
-int		ft_strequ(char const *s1, char const *s2)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	return (ft_strcmp(s1, s2) == 0 ? 1 : 0);
+	char	*new_str;
+	char	*str;
+
+	str = (char*)s;
+	new_str = NULL;
+	new_str = (char*)malloc(len + 1);
+	if (new_str == NULL)
+		return (NULL);
+	ft_strncpy(new_str, str + start, len);
+	*(new_str + len) = 0;
+	return (new_str);
 }

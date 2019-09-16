@@ -6,7 +6,7 @@
 /*   By: qjosmyn <qjosmyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/13 10:19:26 by qjosmyn           #+#    #+#             */
-/*   Updated: 2019/09/15 23:21:22 by qjosmyn          ###   ########.fr       */
+/*   Updated: 2019/09/16 12:36:28 by qjosmyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,50 @@ char	f(char s)
 	return (s + 1);
 }
 
+static size_t	ft_wordlen(const char *str, char c)
+{
+	size_t i;
+
+	i = 0;
+	while (*(str++) != c)
+		i++;
+	return (i);
+}
+
+static size_t	ft_lenarr(char *s, char c)
+{
+	size_t	i;
+	size_t	len;
+	
+	len = 0;
+	i = 0;
+	while (s[i] != 0)
+	{
+		if	(s[i] == c)
+			i++;
+		else
+		{
+			len++;
+			i = i + ft_wordlen(s + i, c);
+		}
+	}
+	return (len);
+}
+
 int main()
 {
-	char	*s1 = "see FF your FF return FF now FF";
-	char	*s2 = "FF";
-	// printf("strncmp = %d %c\n", strncmp(s1 + 4, s2 , 5), *(s1 + 4));
-	// printf("ft_strncmp =  %d\n", ft_strncmp(s1 + 4, s2 , 5));
-	printf("%s\n", strnstr(s1, s2, strlen(s1)));
-	char	*s3 = "FF your FF return FF now FF";
-	char	*s4 = "FF";
-	printf("%s", ft_strnstr(s3, s4, strlen(s1)));
+	char *s1 = "*hello*fellow***students*";
+	char c = '*';
+	printf("%zu %s", ft_lenarr(s1, c), s1);
+	// char	*s1 = "see FF your FF return FF now FF";
+	// char	*s2 = "FF";
+	// // printf("strncmp = %d %c\n", strncmp(s1 + 4, s2 , 5), *(s1 + 4));
+	// // printf("ft_strncmp =  %d\n", ft_strncmp(s1 + 4, s2 , 5));
+	// printf("%s\n", strnstr(s1, s2, strlen(s1)));
+	// char	*s3 = "FF your FF return FF now FF";
+	// char	*s4 = "FF";
+	// printf("%s", ft_strnstr(s3, s4, strlen(s1)));
+	
 	// char	s1[100] = "abc";
 	// char	s2[100] = "a";
 	// printf("%zd", strlcat(s1, s2, 7));

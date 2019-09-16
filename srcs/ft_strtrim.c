@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qjosmyn <qjosmyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/11 09:31:11 by qjosmyn           #+#    #+#             */
-/*   Updated: 2019/09/16 09:44:57 by qjosmyn          ###   ########.fr       */
+/*   Created: 2019/09/16 10:36:59 by qjosmyn           #+#    #+#             */
+/*   Updated: 2019/09/16 12:07:56 by qjosmyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <header.h>
+#include <stdlib.h>
 #include <stdio.h>
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
+char	*ft_strtrim(char const *s)
 {
-	char	*str;
 	size_t	len;
-	//size_t	i;
+	size_t	i;
+	char	*new_str;
 
-	len = ft_strlen(haystack);
-	str = (char *)haystack;
-	if (*needle == 0)
-		return (str);
-	else if (n == 0 || len < ft_strlen(needle))
+	i = 0;
+	len = ft_strlen(s);
+	new_str = NULL;
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+		i++;
+	while ((s[len - 1] == ' ' || s[len - 1] == '\n' || s[len - 1] == '\t')
+			&& len != 0)
+		len--;
+	if (len == 0)
+		i = 0;
+	new_str = (char*)malloc(len - i + 1);
+	if (new_str == NULL)
 		return (NULL);
-	while (n != 0 && *str)
-	{
-		if (!ft_strncmp(str, needle, len)
-		|| ft_strncmp(str, needle, len) == needle[0])
-			return (str);
-		str++;
-		n--;
-	}
-	return (NULL);
+	ft_strlcat(new_str, s + i, len - i + 1);
+	return (new_str);
 }

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qjosmyn <qjosmyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 09:26:04 by qjosmyn           #+#    #+#             */
-/*   Updated: 2019/09/16 09:47:25 by qjosmyn          ###   ########.fr       */
+/*   Created: 2019/09/16 09:47:53 by qjosmyn           #+#    #+#             */
+/*   Updated: 2019/09/16 09:51:41 by qjosmyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <header.h>
 
-int		ft_strequ(char const *s1, char const *s2)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	return (ft_strcmp(s1, s2) == 0 ? 1 : 0);
+	return (!ft_strncmp(s1, s2, n));
 }
